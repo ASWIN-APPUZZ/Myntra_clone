@@ -21,7 +21,6 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
 
     return Scaffold(
       body: _pages[currentState],
@@ -34,7 +33,6 @@ class _LandingPageState extends State<LandingPage> {
         },
         unselectedItemColor: Colors.black87,
         selectedItemColor: Colors.redAccent,
-        // fixedColor: Colors.blue,
         items: [
           BottomNavigationBarItem(
               icon: SPIcon(
