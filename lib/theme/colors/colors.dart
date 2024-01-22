@@ -10,4 +10,5 @@ class AppColor{
   static const Color transp = Color.fromARGB(0, 236, 237, 240);
   static const Color textcolor1 = Color.fromARGB(255, 88, 88, 89);
   static const Color bgcolor =Colors.redAccent;
+  static const Color greens =Color.fromARGB(255, 8, 150, 15);
  }

@@ -9,6 +9,8 @@ mongoose.connect(`mongodb+srv://aswinajithkumarofficial:${process.env.mongodbPas
 const connection = mongoose.connection;
 connection.once("open", () => console.log("MongoDB Connection Successful "))
 
+//middleware
+app.use(express.json());
 const loginRoutes = require("./routes/login.routes");
 app.use("/login",loginRoutes)
 
@@ -21,3 +23,4 @@ const PORT = 3000; // You can choose any available port number
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+

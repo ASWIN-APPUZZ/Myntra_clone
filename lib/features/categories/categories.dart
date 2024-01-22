@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mynthra_clone/features/login/login_bottom_sheet.dart';
-
 class CategoriesPage extends StatefulWidget {
   const CategoriesPage({super.key});
 
@@ -14,7 +12,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
     return const Scaffold(
       body: SafeArea(
         child: Column(
-          children: [LoginBottomSheet()],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Categories")
+            // LoginBottomSheet()
+            ],
         ),
       ),
     );

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mynthra_clone/features/profile/profile_content.dart';
 import 'package:mynthra_clone/foundation/profile_item/profile_item.dart';
 import 'package:mynthra_clone/foundation/sp_solid_button/sp_solid_button.dart';
 import 'package:mynthra_clone/theme/colors/colors.dart';
 import 'package:mynthra_clone/theme/strings/strings.dart';
+
+import '../login/login_bottom_sheet.dart';
 
 class ProfileWithoutLogin extends StatelessWidget {
   const ProfileWithoutLogin({super.key});
@@ -39,18 +42,21 @@ class ProfileWithoutLogin extends StatelessWidget {
                   width: MediaQuery.of(context).size.width/1.7,
                   child: SPSolidButton(
                     btntext: Strings.login + '/' + Strings.sign,
+                    onpressed: () => Get.bottomSheet(LoginBottomSheet()),
                   ),
                 )),
           ])),
       const SizedBox(height: 15),
       Container(
           color: AppColor.whites,
-          child: const Column(children: [
+          child:  Column(children: [
             ProfileItem(
                 title: 'Orders',
                 subtitle: 'Check your order status',
                 assetname: 'orders.png',
-                isLast: false),
+                isLast: false,
+                onTap: () => Get.bottomSheet(LoginBottomSheet())
+                ),
             ProfileItem(
                 title: 'Help Center',
                 subtitle: 'Help regarding your recent purchase',
@@ -65,7 +71,7 @@ class ProfileWithoutLogin extends StatelessWidget {
       const SizedBox(height: 15),
       Container(
           color: AppColor.whites,
-          child: const Column(children: [
+          child: Column(children: [
             ProfileItem(
                 title: 'Scan for coupon', assetname: 'qr.png', isLast: false),
             ProfileItem(
