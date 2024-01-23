@@ -23,9 +23,6 @@ class LoginController extends GetxController {
     } catch (error) {
       print("Error during login: $error");
     }
-    // Handle network or other unexpected errors
-    // } finally {
-    //   Get.close(1); // Close the loading indicator
-    // }
+    
   }
 }

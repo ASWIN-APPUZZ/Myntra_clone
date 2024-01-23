@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
+import 'package:get/state_manager.dart';
 import 'package:mynthra_clone/features/login/controller/login_controller.dart';
 import 'package:mynthra_clone/features/register/controller/register_controller.dart';
 import 'package:mynthra_clone/foundation/gender_button/gender_button.dart';
@@ -100,9 +101,9 @@ class RegisterPage extends StatelessWidget {
                             }),
                         // const SizedBox(height: 15),
 
-                        GenderButton(
-                          onGenderTap: onGenderTap, genderValue: registerController.gender.value,
-                        ),
+                        Obx(() => GenderButton(
+                            onGenderTap: onGenderTap,
+                            genderValue: registerController.gender.value)),
 
                         const SizedBox(height: 30),
 
@@ -138,16 +139,19 @@ class RegisterPage extends StatelessWidget {
 
                         //MARK:- Create
                         SPSolidButton(
-                            btntext: Strings.createacc,
-                            onpressed: () {
-                              formKey.currentState!.validate();
-                            })
+                          btntext: Strings.createacc,
+                          onpressed: () {
+                            if (formKey.currentState!.validate()) {
+                              registerController.register();
+                            }
+                          },
+                        )
                       ])))),
         ));
   }
 
-  void onGenderTap(String value) {
-    registerController.gender.value = value; 
-    print(value);
+  void onGenderTap(String gender) {
+    registerController.gender.value = gender;
+    print(gender);
   }
 }

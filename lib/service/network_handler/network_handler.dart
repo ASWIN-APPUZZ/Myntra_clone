@@ -6,7 +6,7 @@ class NetworkHandler {
   static final storage = FlutterSecureStorage();
   static Future<String> post(var body, String endpoint) async {
     var response =  await client.post(buildUrl(endpoint),
-        body: body, headers: {"Content-Type": "application/json"});
+        body: body, headers: {"Content-Type": "application/json",  });
     return response.body;
   }
 
@@ -16,7 +16,7 @@ class NetworkHandler {
     return Uri.parse(apiPath);
   }
 
-  static void storeToken(String token) async {
+  static Future<void>  storeToken(String token) async {
     await storage.write(key: "token", value: token);
   }
 

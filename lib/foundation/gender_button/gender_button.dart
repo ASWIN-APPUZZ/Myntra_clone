@@ -3,10 +3,12 @@ import 'package:mynthra_clone/theme/colors/colors.dart';
 import 'package:mynthra_clone/theme/strings/strings.dart';
 
 class GenderButton extends StatelessWidget {
-  const GenderButton(
+  GenderButton(
       {super.key, required this.onGenderTap, required this.genderValue});
   final Function(String value) onGenderTap;
   final String genderValue;
+  final TextStyle textStyleWhite = TextStyle(color: AppColor.whites);
+  final TextStyle textStyleBlack = TextStyle(color: AppColor.blacks);
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +24,10 @@ class GenderButton extends StatelessWidget {
                 onGenderTap(Strings.male);
               },
               child: Container(
-                color: genderValue == Strings.male? AppColor.transp:AppColor.theme,
-                child: const Center(child: Text(Strings.male)),
-                
-                
+                color: genderValue == Strings.male
+                    ? AppColor.theme
+                    : AppColor.transp,
+                child: Center(child: Text(Strings.male, style : genderValue == Strings.male?textStyleWhite:textStyleBlack)),
               ),
             )),
         const VerticalDivider(
@@ -39,8 +41,10 @@ class GenderButton extends StatelessWidget {
                 onGenderTap(Strings.female);
               },
               child: Container(
-                color: genderValue == Strings.female? AppColor.transp:AppColor.theme,
-                child: const Center(child: Text(Strings.female)),
+                color: genderValue == Strings.female
+                    ? AppColor.theme
+                    : AppColor.transp,
+                child: Center(child: Text(Strings.female, style : genderValue == Strings.female?textStyleWhite:textStyleBlack)),
               ),
             ))
       ]),
