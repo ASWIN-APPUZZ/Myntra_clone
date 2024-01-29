@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mynthra_clone/features/landing_page/landing_page.dart';
 import 'package:mynthra_clone/features/login/model/login_model.dart';
 import 'package:mynthra_clone/features/register/register.dart';
 import 'package:mynthra_clone/service/network_handler/network_handler.dart';
@@ -19,10 +20,12 @@ class LoginController extends GetxController {
       if (data["msg"] == "Registration Successful") {
         print("Redirecting to RegisterPage"); // Add this line for debugging
         Get.to(() => RegisterPage());
+      } else {
+        await NetworkHandler.storeToken(data["token"]);
+        Get.offAll(()=>LandingPage());
       }
     } catch (error) {
       print("Error during login: $error");
     }
-    
   }
 }

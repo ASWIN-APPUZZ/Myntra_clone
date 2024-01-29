@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mynthra_clone/features/landing_page/controller/landingpage_controller.dart';
 import 'package:mynthra_clone/theme/strings/strings.dart';
 import 'package:mynthra_clone/features/categories/categories.dart';
 import 'package:mynthra_clone/features/home/home_page.dart';
@@ -19,9 +21,10 @@ class _LandingPageState extends State<LandingPage> {
 
   get currentIndex => currentState;
 
+  var landingPageController = Get.put(LandingPageController());
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: _pages[currentState],
       bottomNavigationBar: BottomNavigationBar(

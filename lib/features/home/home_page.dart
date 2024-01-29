@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynthra_clone/features/home/product_card/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,14 +11,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Text("HOME")],
-        ),
-      ),
+    return Scaffold(
+      body: ListView(children: const [ProductCard()],)
     );
   }
 }

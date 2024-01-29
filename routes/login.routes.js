@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../model/user.model");
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const config = require('../config');
 
 router.use(bodyParser.json());
 
@@ -44,9 +45,11 @@ router.post("/register", (req, res) => {
     });
 });
 
+
+
 // Function to send JWT token as a response
 const sendToken = (mobileNo, res, message) => {
-    let token = jwt.sign({ mobileNo: mobileNo }, "Key");
+    let token = jwt.sign({ mobileNo: mobileNo }, config.key);
     res.json({ token: token, msg: message }); 
 }
 
