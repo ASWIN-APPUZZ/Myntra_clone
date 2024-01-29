@@ -13,8 +13,10 @@ connection.once("open", () => console.log("MongoDB Connection Successful "))
 app.use(express.json());
 const loginRoutes = require("./routes/login.routes");
 const userDetailsRoutes = require("./routes/user_details.routes");
+const productDetailsRoutes = require("./routes/product_details.routes");
 app.use("/login",loginRoutes)
 app.use("/user-details",userDetailsRoutes)
+app.use("/product-details",productDetailsRoutes)
 
 app.route("/").get((req, res) => {
     res.json("Hello ")
