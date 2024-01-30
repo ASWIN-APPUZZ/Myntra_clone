@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynthra_clone/features/categories/ui/main_category_tile.dart';
 class CategoriesPage extends StatefulWidget {
   const CategoriesPage({super.key});
 
@@ -12,11 +13,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
     return const Scaffold(
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Categories")
-            // LoginBottomSheet()
-            ],
+            MainCategoryTile(),
+          ],
         ),
       ),
     );

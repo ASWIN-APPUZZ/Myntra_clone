@@ -30,4 +30,7 @@ class Strings {
   static const String compleate = ' Compleate your SignUp';
   static const String male = 'Male';
   static const String female = 'Female';
+  static const String menapparel = 'MEN APPAREL';
+  static const String men = 'Men';
+  static const String women = 'Women';
 }

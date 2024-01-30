@@ -1,3 +1,3 @@
-name,dec,wishlisted,actual_price,discounted_price,discound,category,sub_category,type,genere,brand,image_url,rating,no_of_reviews
+name,desc,wishlisted,actual_price,discounted_price,discound,category,sub_category,type,genere,brand,image_url,rating,no_of_reviews
 Tshirt,This is a T-Shirt,FALSE,4999,2999,20,Men,Topwear,T-Shirt,New,Addidas,1,4.5,200
 Shirt,This is a Shirt,FALSE,1999,999,50,Women,Topwear,Shirt,Classic,Puma,2,3,100

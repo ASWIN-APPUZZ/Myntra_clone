@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mynthra_clone/features/home/product_card/product_card.dart';
+// import 'package:mynthra_clone/features/product/product_card/product_card.dart';
+import '../product/product.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,7 +13,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: const [ProductCard()],)
+      body: Product()
+      // ListView(children: const [Product()],)
     );
   }
 }
