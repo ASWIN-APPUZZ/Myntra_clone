@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const lastCategoryDetails = Schema({
     "name": {
         type: String,
-        required: true,
     },
 })
 const subCategoryDetails = Schema({
